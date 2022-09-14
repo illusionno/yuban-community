@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 声明一个容器 */
+            display: grid;
+            /* 声明列的宽度,数字2表示的重复2次，即有2列宽度为250px */
+            /* grid-template-columns: repeat(2, 250px); */
+            /*分别表示三行的高度  */
+            /* grid-template-rows: 100px 300px 100px; */
+
+            grid-template-columns: repeat(4, 1fr);
+            /*分别表示二行的高度  */
+            grid-template-rows: 100px 100px;
+            /* 声明行间距和列间距 */
+            grid-gap: 20px;
+        }
+
+        .item {
+            background: rgb(97, 97, 216);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+
+</html>

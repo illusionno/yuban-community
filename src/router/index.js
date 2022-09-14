@@ -1,6 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import DiscoverView from "@/views/DiscoverView";
-import TendingView from "@/views/TendingView";
 
 
 const routes = [
@@ -12,14 +10,18 @@ const routes = [
       {
         path: 'discover',
         name: 'discover',
-        component: DiscoverView,
+        component:() => import('@/views/DiscoverView'),
       },
 
       {
         path: 'tending',
         name: 'tending',
-        component: TendingView
-      },
+        component: () => import('@/views/TendingView'),
+      },{
+        path:'new',
+        name:'new',
+        component: () => import('@/views/NewView'),
+      }
 
     ]
   },

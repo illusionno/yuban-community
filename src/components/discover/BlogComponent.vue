@@ -1,10 +1,11 @@
 <template>
 	<div class="blogs">
-		<div class="blog anim" style="--delay: .1s">
+		<div class="blog anim" >
 			<div class="title">皮卡丘 | 不干什么，就为了干这个世界！ </div>
 			
 			<div class="author">
 				<div class="author-wrapper">
+					<!-- 小对勾 -->
 					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><path d="M20 6L9 17l-5-5" /></svg>
 					<img src="../../assets/img/pikachu.png"  alt=""/>
 				</div>
@@ -16,7 +17,7 @@
 			<div class="time">6 分钟</div>
 		</div>
 		
-		<div class="blog anim" style="--delay: .2s">
+		<div class="blog anim" >
 			<div class="title">年度最佳 | 2022年度颜色排行榜 </div>
 			
 			<div class="author tips">
@@ -48,7 +49,9 @@ export default {
 	
 	.blog {
 		background-image: url(../../assets/img/pikachu.png);
+		// 背景图片缩小
 		background-size: 80%;
+		// 背景图片相对于x轴的偏移位置
 		background-position-x: 150px;
 		background-color: #31abbd;
 		display: flex;
@@ -57,17 +60,20 @@ export default {
 		width: 65%;
 		padding: 20px;
 		border-radius: 20px;
+		//单个项目在交叉轴方向上的对齐方式
 		align-self: stretch;
-		overflow: hidden;
+		// overflow: hidden;
 		position: relative;
-		transition: background 0.3s;
+		// transition: background 0.3s;
 		background-repeat: no-repeat;
 	
 		
 		.title{
 			font-size: 25px;
-			max-width: 20ch;
+			// 单位ch：相对于数字0的大小
+			max-width: 20ch;//只能装下20个0
 			font-weight: 600;
+			// 字符间距
 			letter-spacing: 1px;
 			color: #fff;
 			margin-bottom: 30px;
@@ -76,11 +82,10 @@ export default {
 		.author {
 			display: flex;
 			align-items: center;
-			//padding-bottom: 10px;
 			
 			.author-wrapper {
 				position: relative;
-				flex-shrink: 0;
+
 				svg {
 					width: 16px;
 					padding: 2px;
@@ -89,7 +94,7 @@ export default {
 					border-radius: 50%;
 					border: 2px solid #0daabc;
 					position: absolute;
-					bottom: 5px;
+					bottom: 0;
 					right: 0;
 				}
 				
@@ -99,6 +104,7 @@ export default {
 					border: 1px solid rgb(255 255 255 / 75%);
 					padding: 4px;
 					border-radius: 50%;
+					// 保持原有尺寸比例。高度铺满容器，宽度等比缩放，超出部分被剪掉
 					object-fit: cover;
 				}
 			}
@@ -119,9 +125,9 @@ export default {
 					.separate {
 						width: 3px;
 						height: 3px;
+						border-radius: 50%;
 						display: inline-block;
 						vertical-align: middle;
-						border-radius: 50%;
 						background-color: #fff;
 						margin: 0 6px;
 					}
@@ -146,16 +152,15 @@ export default {
 			bottom: 20px;
 		}
 	}
-	
+	// 选取类名为.blog之后的类名为.blog元素
 	.blog + .blog {
 		margin-left: 20px;
 		width: 35%;
 		background-image: url(../../assets/img/beautiful_girl.png);
-		background-color: unset;
 		background-color: darkseagreen;
 		background-position-x: 0;
 		background-size: 139%;
-		filter: saturate(1.4);
+		// filter: saturate(1.4);
 		img {
 			border-color: rgb(255 255 255 / 75%);
 			margin-top: 14px;
@@ -170,7 +175,7 @@ export default {
 	}
 	
 }
-
+// 浏览器可视区域宽度小于680px
 @media screen and (max-width: 680px) {
 	.blogs{
 		display: flex;
