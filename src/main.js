@@ -10,8 +10,9 @@ require("vue-video-player/")
 import "videojs-flash"
 import video_zhCN from 'video.js/dist/lang/zh-CN.json'
 
-
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
 Video.addLanguage('zh_CN',video_zhCN)
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(ElementPlus).mount('#app')

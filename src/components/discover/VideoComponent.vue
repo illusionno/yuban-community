@@ -172,7 +172,6 @@ export default defineComponent({
         height: 120px;
         display: block;
         cursor: pointer;
-        //background-color: #6bbb9e;
       }
 
       .author-wrapper {
@@ -267,7 +266,7 @@ export default defineComponent({
     }
 
     &:hover {
-		box-shadow: 3px 3px 8px rgb(255, 229, 229);
+      box-shadow: 3px 3px 8px rgb(255, 229, 229);
       .time {
         display: none;
       }
@@ -281,8 +280,10 @@ export default defineComponent({
         opacity: 0;
       }
     }
+    &:hover {
+      border: 1px solid #fff;
+    }
   }
-  
 }
 
 @media screen and (max-width: 900px) {

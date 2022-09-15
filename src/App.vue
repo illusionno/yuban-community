@@ -147,7 +147,7 @@ export default {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(21 20 26 / 63%);
+  background-color: rgba(255, 229, 229, 0.63);;
   border-radius: 10px;
 }
 </style>

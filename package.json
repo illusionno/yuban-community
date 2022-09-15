@@ -1,5 +1,5 @@
 {
-  "name": "dim-star",
+  "name": "与伴",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "element-plus": "^2.2.16",
     "style-loader": "^3.3.1",
     "video.js": "^7.20.2",
     "videojs-flash": "^2.2.1",
