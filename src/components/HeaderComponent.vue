@@ -8,11 +8,12 @@
         placeholder="请输入要查询的内容~~"
       />
     </div>
+    <!-- 已登录 -->
     <div class="settings" v-if="isLogin">
       <img class="img" src="../assets/img/head.jpg" alt="" />
       <span class="name">玉桂狗</span>
       <el-dropdown>
-        <span >
+        <span>
           <el-icon>
             <arrow-down />
           </el-icon>
@@ -39,31 +40,59 @@
         </svg>
       </div>
     </div>
-    <!-- <div v-else>
-      <el-avatar :icon="UserFilled" />
-    </div> -->
+    <!-- 未登录 -->
+    <div class="settings2" v-else>
+      <el-dropdown>
+        <span>
+          <div class="icon">
+            <svg
+              t="1663726201071"
+              class="unlogin-icon"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="1514"
+              width="200"
+              height="200"
+            >
+              <path
+                d="M363.776 551.68a239.104 239.104 0 0 0 297.216-0.512c161.92 82.624 184.512 234.112 189.248 284.544a468.8 468.8 0 0 0 132.416-326.912 470.656 470.656 0 1 0-941.312 0.064c0 127.104 50.624 242.24 132.48 326.912 4.736-48.512 28.672-201.152 189.952-284.096zM512 177.6c102.016 0 184.96 82.944 184.96 184.896S614.016 547.328 512 547.328c-101.952 0-184.896-82.816-184.896-184.832S410.048 177.6 512 177.6z"
+                p-id="1515"
+                fill="#707070"
+              ></path>
+            </svg>
+          </div>
+        </span>
+
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>去登录</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+    </div>
   </div>
 </template>
 
 <script>
 import { defineComponent, ref } from "vue";
-import { ArrowDown  } from "@element-plus/icons-vue";
+import { ArrowDown } from "@element-plus/icons-vue";
 export default defineComponent({
   name: "HeaderComponent",
   components: {
     ArrowDown,
-    // UserFilled
   },
   setup() {
     let isChange = ref(false);
-    let isLogin = ref(false)
+    // 默认登陆账号
+    let isLogin = ref(true);
     let changeStyle = () => {
       isChange.value = !isChange.value;
     };
     return {
       isChange,
       changeStyle,
-      isLogin
+      isLogin,
     };
   },
 });
@@ -73,6 +102,7 @@ export default defineComponent({
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-shrink: 0;
   padding: 30px;
 
@@ -157,6 +187,16 @@ export default defineComponent({
         @media screen and (max-width: 575px) {
           display: none;
         }
+      }
+    }
+  }
+  .settings2 {
+    .icon {
+      svg {
+        height: 38px;
+        width: 38px;
+        position: relative;
+        top: 3px;
       }
     }
   }
