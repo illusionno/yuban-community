@@ -6,6 +6,9 @@
       v-for="item in watchList"
       :key="item.id"
       :style="delay(item.id)"
+      @click="
+        $router.push({ name: 'video-detail', query: { id: `${item.id}` } })
+      "
     >
       <div class="time">{{ item.time }}</div>
       <div class="video-wrapper">
@@ -280,9 +283,9 @@ export default defineComponent({
         opacity: 0;
       }
     }
-    &:hover {
-      border: 1px solid #fff;
-    }
+    // &:hover {
+    //   border: 1px solid #fff;
+    // }
   }
 }
 

@@ -28,6 +28,11 @@ const routes = [
         component: () => import('@/views/discover/modules/Top2View')
       },
       {
+        path: 'discover/video-detail',
+        name: 'video-detail',
+        component: () => import('@/views/discover/modules/VideoDetail')
+      },
+      {
         path: 'tending',
         name: 'tending',
         component: () => import('@/views/TendingView'),

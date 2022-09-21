@@ -153,7 +153,7 @@ export default defineComponent({
     display: none;
     width: 30px;
     height: 30px;
-    background: linear-gradient(#e2b0ff,#c587e9);
+    background: linear-gradient(#e2b0ff, #c587e9);
     flex-shrink: 0;
     color: #fff;
     align-items: center;
@@ -167,7 +167,7 @@ export default defineComponent({
     font-size: 30px;
     font-weight: 600;
     line-height: 34px;
-	text-shadow: 6px 3px 3px #a86eca;
+    text-shadow: 6px 3px 3px #a86eca;
     // position: sticky;
     top: 0;
 

@@ -1,7 +1,9 @@
 <template>
   <div class="box">
-    <span class="title">{{ $route.query.title }} </span>
-    <el-icon class="right-arrow" @click="() =>$router.back()"><ArrowRightBold /></el-icon>
+    <span class="title">{{ $route.query.title || " " }}</span>
+    <el-icon class="right-arrow" @click="() => $router.back()"
+      ><ArrowRightBold
+    /></el-icon>
   </div>
 </template>
 
@@ -26,7 +28,7 @@ export default defineComponent({
     padding: 8px;
     border-radius: 11px;
   }
-  .right-arrow{
+  .right-arrow {
     top: 11px;
   }
 }
